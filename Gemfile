@@ -5,13 +5,15 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'bootstrap-sass', '2.1'
+
 group :development, :test do
 	gem 'sqlite3'
-	gem 'rspec-rails'
+	gem 'rspec-rails', '2.11.0'
 end
 
 group :test do
-	gem 'capybara'
+	gem 'capybara', '1.1.2'
 end
 
 # Gems used only for assets and not required
