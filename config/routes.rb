@@ -1,4 +1,8 @@
 Classwork::Application.routes.draw do
+  get "users/new"
+
+  match '/signup', :to => "users#new"
+
   match '/index', :to => "static_pages#index"
 
   match '/about', :to => "static_pages#about"
