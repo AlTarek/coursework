@@ -1,50 +1,35 @@
 require 'spec_helper'
 
-describe "Static Pages" do
-	describe "Index Page" do
-		it "should have the h1 'Sample App'" do
-			visit '/static_pages/index'
-   			page.should have_selector('h1', :text => 'Sample App')
-   		end
+describe "Static pages" do
 
-   		it "should have the title 'Home'" do
-			visit '/static_pages/index'
-			page.should have_selector('title', :text => 'Ruby on Rails Sample App | Home')
-		end
-	end
+  subject { page }
 
-	describe "About Page" do
-		it "should have the h1 'Sample App'" do
-			visit '/static_pages/about'
-   			page.should have_selector('h1', :text => 'Sample App')
-   		end
-   		it "should have the title 'About'" do
-			visit '/static_pages/about'
-			page.should have_selector('title', :text => 'Ruby on Rails Sample App | About')
-		end
-	end
+  describe "Home page" do
+    before { visit root_path }
 
-	describe "Contact Page" do
-		it "should have the h1 'Sample App'" do
-			visit '/static_pages/contact'
-   			page.should have_selector('h1', :text => 'Sample App')
-   		end
+    it { should have_selector('h1',    text: 'Sample App') }
+    it { should have_selector('title', text: 'Ruby on Rails Sample App') }
+    it { should_not have_selector 'title', text: '| Home' }
+  end
 
-   		it "should have the title 'Contact Us'" do
-			visit '/static_pages/contact'
-			page.should have_selector('title', :text => 'Ruby on Rails Sample App | Contact')
-		end
-	end
+  describe "Help page" do
+    before { visit help_path }
 
-	describe "Help Page" do
-		it "should have the h1 'Sample App'" do
-			visit '/static_pages/help'
-   			page.should have_selector('h1', :text => 'Sample App')
-   		end
+    it { should have_selector('h1',    text: 'Help') }
+    it { should have_selector('title', text: 'Ruby on Rails Sample App | Help') }
+  end
 
-   		it "should have the title 'Help'" do
-			visit '/static_pages/help'
-			page.should have_selector('title', :text => 'Ruby on Rails Sample App | Help')
-		end
-	end
+  describe "About page" do
+    before { visit about_path }
+
+    it { should have_selector('h1',    text: 'About') }
+    it { should have_selector('title', text: 'Ruby on Rails Sample App | About Us') }
+  end
+
+  describe "Contact page" do
+    before { visit contact_path }
+
+    it { should have_selector('h1',    text: 'Contact') }
+    it { should have_selector('title', text: 'Ruby on Rails Sample App | Contact') }
+  end
 end

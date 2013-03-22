@@ -12,3 +12,4 @@ require 'spec_helper'
 # end
 describe StaticPagesHelper do
 end
+

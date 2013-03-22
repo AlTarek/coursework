@@ -1,11 +1,11 @@
 Classwork::Application.routes.draw do
-  get "static_pages/index"
+  match '/index', :to => "static_pages#index"
 
-  get "static_pages/about"
+  match '/about', :to => "static_pages#about"
 
-  get "static_pages/help"
+  match '/contact', :to => "static_pages#contact"
 
-  get "static_pages/contact"
+  match '/help', :to => "static_pages#help"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
