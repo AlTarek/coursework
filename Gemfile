@@ -12,14 +12,18 @@ group :development, :test do
 	gem 'rspec-rails', '2.11.0'
 end
 
+group :development do
+	gem 'annotate'
+end
+
 group :test do
 	gem 'capybara', '1.1.2'
 end
 
-group :production do
-	gem 'pg'
-	gem 'thin'
-end
+#group :production do
+#	gem 'pg'
+#	gem 'thin'
+#end
 
 # Gems used only for assets and not required
 # in production environments by default.
