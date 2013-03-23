@@ -10,10 +10,9 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(params[:user])
   	if @user.save 
-  		flash[:notice] = "New User Saved"
+  		flash[:success] = "Welcome to the Sample App"
   		redirect_to @user
   	else
-      flash[:notice] = "User Already exists"
   		render :action => "new"
   	end
   end
