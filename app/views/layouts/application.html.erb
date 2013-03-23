@@ -10,6 +10,9 @@
   <body>
     <%= render 'layouts/partials/header' %>
     <div class="container">
+    <%if flash[:notice]%>
+      <p class="notice"><%= flash[:notice] %>
+    <%end%>
       <%= yield %>
       <%= render 'layouts/partials/footer' %>
     </div>
