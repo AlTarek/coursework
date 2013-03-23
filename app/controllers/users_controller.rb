@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   		flash[:notice] = "New User Saved"
   		redirect_to @user
   	else
+      flash[:notice] = "User Already exists"
   		render :action => "new"
   	end
   end
