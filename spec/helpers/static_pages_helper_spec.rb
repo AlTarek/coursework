@@ -10,6 +10,3 @@ require 'spec_helper'
 #     end
 #   end
 # end
-describe StaticPagesHelper do
-end
-
